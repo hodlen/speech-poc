@@ -1,23 +1,17 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  crypto-js:
-    specifier: ^4.1.1
-    version: 4.1.1
+  '@iris-family/speech-sdk.ts':
+    specifier: ^0.1.0
+    version: 0.1.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  tiny-invariant:
-    specifier: ^1.3.1
-    version: 1.3.1
 
 devDependencies:
-  '@types/crypto-js':
-    specifier: ^4.1.1
-    version: 4.1.1
   '@types/react':
     specifier: ^18.0.28
     version: 18.2.6
@@ -306,6 +300,13 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@iris-family/speech-sdk.ts@0.1.0:
+    resolution: {integrity: sha512-UCJpjSMcV6RSFWq3G5IYixoGR3AQHtGcS04Cc9M9bpiWOXpg5afztZPe5/BRaTYZD5IgLMUJ5vEzx+2n+9xcfA==}
+    dependencies:
+      crypto-js: 4.1.1
+      tiny-invariant: 1.3.1
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -437,10 +438,6 @@ packages:
       '@swc/core-win32-arm64-msvc': 1.3.57
       '@swc/core-win32-ia32-msvc': 1.3.57
       '@swc/core-win32-x64-msvc': 1.3.57
-    dev: true
-
-  /@types/crypto-js@4.1.1:
-    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
     dev: true
 
   /@types/json-schema@7.0.11:

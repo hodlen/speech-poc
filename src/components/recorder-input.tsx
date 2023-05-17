@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { SpeechRecognizor } from "../recognizor";
+import { SpeechRecognizor } from "@iris-family/speech-sdk.ts";
 import { IFLYTEK_CREDS } from "../constants";
 
 export const SpeechRecognizorInput: React.FC = () => {
