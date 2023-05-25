@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iris-family/client.ts": "^0.0.3",
     "@iris-family/speech-sdk.ts": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
