@@ -1,9 +1,10 @@
 import { TTSGenerator } from "@iris-family/speech-sdk.ts";
 import React, { useRef, useState } from "react";
+import { IFLYTEK_CREDS } from "../constants";
 
 export const TextPlayer: React.FC = () => {
   const [text, setText] = useState("");
-  const playerRef = useRef(new TTSGenerator());
+  const playerRef = useRef(new TTSGenerator(IFLYTEK_CREDS));
 
   return (
     <div>
