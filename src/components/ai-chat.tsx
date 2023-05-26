@@ -14,13 +14,8 @@ export const AiChat: React.FC = () => {
   const [input, setInput] = useState("");
   const [dialogue, setDialogue] = useState("[]");
   useEffect(() => {
-    console.log("this effect is supposed to run only once");
     const client = clientRef.current;
     client.subscribeToStreamingResponse((response) => {
-      console.log(
-        "🚀 ~ file: ai-chat.tsx:18 ~ client.subscribeToStreamingResponse ~ response:",
-        response
-      );
       setMessage(response?.message ?? "");
       setThinking(response?.thinking ?? "");
       setControl(response?.controlInstructions ?? "");
