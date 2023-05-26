@@ -2,6 +2,7 @@ import "./App.css";
 import reactLogo from "./assets/react.svg";
 import { AiChat } from "./components/ai-chat";
 import { SpeechRecognizorInput } from "./components/recorder-input";
+import { TextPlayer } from "./components/text-player";
 import viteLogo from "/vite.svg";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         Chat with ChatGPT!
         <AiChat />
       </div>
+      <TextPlayer />
     </>
   );
 }

@@ -10,7 +10,7 @@ export const SpeechRecognizorInput: React.FC = () => {
   const [resStatus, setRecStatus] = useState(recognizor.current.status);
 
   useEffect(() => {
-    recognizor.current.subscribeStreamRecUpdate(setRecResult);
+    recognizor.current.subscribeStreamUpdate(setRecResult);
     recognizor.current.subscribeStatusChange(setRecStatus);
   }, []);
 
