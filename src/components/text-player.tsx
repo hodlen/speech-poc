@@ -1,4 +1,4 @@
-import { TTSGenerator } from "@iris-family/speech-sdk.ts";
+import { TTSGenerator } from "@iris-family/speech-sdk";
 import React, { useRef, useState } from "react";
 import { IFLYTEK_CREDS } from "../constants";
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { IrisClient } from "@iris-family/client.ts";
+import { IrisClient } from "@iris-family/client";
 
 export const AiChat: React.FC = () => {
   const clientRef = useRef(
