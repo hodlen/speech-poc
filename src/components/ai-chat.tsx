@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IrisClient } from "@iris-family/client";
+import { IFlyTekStreamConsumerSpeechSynthesizer } from "@iris-family/speech-sdk";
+import { IFLYTEK_CREDS } from "../constants";
 
 export const AiChat: React.FC = () => {
   const clientRef = useRef(
@@ -8,21 +10,38 @@ export const AiChat: React.FC = () => {
       token: "",
     })
   );
+  const playerRef = useRef(
+    new IFlyTekStreamConsumerSpeechSynthesizer(IFLYTEK_CREDS)
+  );
+
   const [message, setMessage] = useState("");
   const [thinking, setThinking] = useState("");
   const [control, setControl] = useState("");
   const [input, setInput] = useState("");
   const [dialogue, setDialogue] = useState("[]");
+
   useEffect(() => {
     const client = clientRef.current;
-    client.subscribeToStreamingResponse((response) => {
-      setMessage(response?.message ?? "");
-      setThinking(response?.thinking ?? "");
-      setControl(response?.controlInstructions ?? "");
-    });
-    client.subscribeToChatHistory((history) =>
+    const unsubClientStream = client.subscribeToStreamingResponse(
+      (response) => {
+        setMessage(response?.message ?? "");
+        setThinking(response?.thinking ?? "");
+        setControl(response?.controlInstructions ?? "");
+        if (!response) {
+          playerRef.current.updateText(undefined);
+        }
+        if (response?.message) {
+          playerRef.current.updateText(response.message);
+        }
+      }
+    );
+    const unsubHistory = client.subscribeToChatHistory((history) =>
       setDialogue(JSON.stringify(history, null, 2))
     );
+    return () => {
+      unsubClientStream();
+      unsubHistory();
+    };
   }, []);
 
   return (
