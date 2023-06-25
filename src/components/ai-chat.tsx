@@ -11,7 +11,9 @@ export const AiChat: React.FC = () => {
     })
   );
   const playerRef = useRef(
-    new IFlyTekStreamConsumerSpeechSynthesizer(IFLYTEK_CREDS)
+    new IFlyTekStreamConsumerSpeechSynthesizer(IFLYTEK_CREDS, {
+      voiceName: "aisxping",
+    })
   );
 
   const [message, setMessage] = useState("");
